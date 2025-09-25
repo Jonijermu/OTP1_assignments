@@ -1,30 +1,31 @@
 public class TemperatureConverter {
 
-    public TemperatureConverter() {
+    public static void main(String[] args) {
+        // Example usage
+        double fahrenheit = 100;
+        double celsius = fahrenheitToCelsius(fahrenheit);
+        System.out.println(fahrenheit + "°F = " + celsius + "°C");
 
+        double kelvin = 300;
+        double celsiusFromKelvin = kelvinToCelsius(kelvin);
+        System.out.println(kelvin + "K = " + celsiusFromKelvin + "°C");
+
+        System.out.println("Is extreme temperature? " + isExtremeTemperature(celsius));
     }
 
-    public double fahrenheitToCelsius(double fahrenheit) {
+    public static double fahrenheitToCelsius(double fahrenheit) {
         return (fahrenheit - 32) / 1.8;
     }
 
-    public double celsiusToFahrenheit(double celsius) {
+    public static double celsiusToFahrenheit(double celsius) {
         return (celsius * 1.8) + 32;
     }
 
-    public double kelvinToCelsius(double kelvin) {
+    public static double kelvinToCelsius(double kelvin) {
         return kelvin - 273.15;
     }
 
-    public boolean isExtremeTemperature(double celsius) {
-        if (celsius < -40) {
-            return true;
-
-        } else if (celsius > 50) {
-            return true;
-
-        } else {
-            return false;
-        }
+    public static boolean isExtremeTemperature(double celsius) {
+        return celsius < -40 || celsius > 50;
     }
 }
