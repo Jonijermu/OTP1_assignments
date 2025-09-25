@@ -1,4 +1,6 @@
+import org.junit.Before;
 import org.junit.Test;
+
 
 import static org.junit.Assert.*;
 
@@ -6,7 +8,7 @@ public class TemperatureConverterTest {
 
     private TemperatureConverter converter;
 
-    @org.junit.jupiter.api.BeforeEach
+    @Before
     public void setUp() {
         converter = new TemperatureConverter();
     }
