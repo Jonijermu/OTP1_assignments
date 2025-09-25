@@ -21,17 +21,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn clean install' // sh for linux and ios
+                bat 'mvn clean install -pl lecturedemo_week6 -am' // sh for linux and ios
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat 'mvn test -pl lecturedemo_week6'
             }
         }
         stage('Code Coverage') {
             steps {
-                bat 'mvn jacoco:report'
+                bat 'mvn jacoco:report -pl lecturedemo_week6'
             }
         }
         stage('Publish Test Results') {
@@ -46,9 +46,11 @@ pipeline {
         }
         stage('Build Docker Image') {
                                 steps {
+                                dir('lecturedemo_week6') {
                                     bat 'docker build -t %DOCKERHUB_REPO%:%DOCKER_IMAGE_TAG% .'
                                 }
                             }
+                        }
 
                stage('Push Docker Image to Docker Hub') {
                     steps {
