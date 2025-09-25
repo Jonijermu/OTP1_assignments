@@ -8,7 +8,7 @@ pipeline {
                 // Define Docker Hub repository name
                 DOCKERHUB_REPO = 'joniheikk/tempcal'
                 // Define Docker image tag
-                DOCKER_IMAGE_TAG = 'latest'
+                DOCKER_IMAGE_TAG = 'latestTemp'
      }
     tools{
         maven 'Maven3'
