@@ -1,9 +1,12 @@
 pipeline {
     agent any
+    tools{
+        maven 'MAVEN_HOME'
+    }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Jonijermu/OTP1_assignments.git'
+               git branch:'master', url:'https://github.com/Jonijermu/OTP1_assignments.git'
             }
         }
         stage('Build') {
