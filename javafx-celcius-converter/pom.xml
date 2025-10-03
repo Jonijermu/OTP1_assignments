@@ -33,7 +33,7 @@
     </dependencies>
 
     <build>
-        <finalName>tempconv</finalName>
+        <finalName>javafx-celcius-converter</finalName>
         <plugins>
             <!-- Compiler plugin -->
             <plugin>

@@ -32,10 +32,18 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'mvn clean package -DskipTests'
+                        sh  'mvn clean package -pl javafx-celcius-converter -am -DskipTests'
                     } else {
-                        bat 'mvn clean package -DskipTests'
+                        bat 'mvn clean package -pl javafx-celcius-converter -am -DskipTests'
                     }
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    bat "mvn clean package -pl javafx-celcius-converter -am -DskipTests"
                 }
             }
         }
